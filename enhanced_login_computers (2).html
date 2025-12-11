@@ -1,0 +1,2020 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" type="image/png" href="favicon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Skin Canvas Aesthetics - Professional skin,hair and laser soloutions in  khanayar srinagar, Kashmir. tattoo removal, PRP Hair Treatment, pigmentaion by asif fayaz. Expert  support since 2022.">
+    <meta name="keywords" content="Skin canvas Kashmir, laser hair reduction, skin canvas support,  skin canvas aesthetics">
+    <title>Skin Canvas - Advanced skin,hair and laser Solutions | khanyar, Kashmir</title>
+    <style>
+        :root {
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            --secondary-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --dark-gradient: linear-gradient(135deg, #0c0c0c 0%, #1a1a2e 50%, #16213e 100%);
+            --glass-bg: rgba(255, 255, 255, 0.1);
+            --glass-border: rgba(255, 255, 255, 0.2);
+            --text-primary: #ffffff;
+            --text-secondary: #e0e0e0;
+            --accent-color: #00f2fe;
+            --success-color: #10b981;
+            --warning-color: #f59e0b;
+            --error-color: #ef4444;
+            --card-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--dark-gradient);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Animated Background Particles */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: var(--accent-color);
+            border-radius: 50%;
+            opacity: 0.6;
+            animation: float 20s infinite linear;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(100vh) translateX(0px); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100px) translateX(100px); opacity: 0; }
+        }
+
+        /* Enhanced Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(12, 12, 12, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--glass-border);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 800;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo::before {
+            content: '✨';
+            -webkit-text-fill-color: initial;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-primary);
+            background: var(--glass-bg);
+            transform: translateY(-2px);
+        }
+
+        .nav-links a.active {
+            background: var(--accent-color);
+            color: var(--dark-gradient);
+        }
+
+        /* Mobile Menu */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        /* Enhanced Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: var(--dark-gradient);
+            position: relative;
+            overflow: hidden;
+            padding: 0;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            z-index: 2;
+        }
+
+        .hero-text {
+            animation: slideInLeft 1s ease-out;
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: var(--primary-gradient);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+            box-shadow: var(--card-shadow);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 35px 60px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--accent-color);
+            border: 2px solid var(--accent-color);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background: var(--accent-color);
+            color: var(--dark-gradient);
+            transform: translateY(-3px);
+        }
+
+        /* Enhanced Hero Visual */
+        .hero-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            animation: slideInRight 1s ease-out;
+        }
+
+        .floating-cards {
+            position: relative;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            transform-style: preserve-3d;
+        }
+
+        .floating-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 1.5rem;
+            box-shadow: var(--card-shadow);
+            animation: float3d 6s ease-in-out infinite;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .floating-card:nth-child(2) { animation-delay: -2s; }
+        .floating-card:nth-child(3) { animation-delay: -4s; }
+        .floating-card:nth-child(4) { animation-delay: -6s; }
+
+        .floating-card:hover {
+            transform: scale(1.05) rotateY(10deg);
+        }
+
+        @keyframes float3d {
+            0%, 100% { transform: translateY(0px) rotateY(0deg); }
+            50% { transform: translateY(-20px) rotateY(5deg); }
+        }
+
+        @keyframes slideInLeft {
+            from { transform: translateX(-100px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        @keyframes slideInRight {
+            from { transform: translateX(100px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        /* Enhanced Sections */
+        .section {
+            padding: 6rem 0;
+            position: relative;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            text-align: center;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            margin-bottom: 4rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Enhanced Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            transform-style: preserve-3d;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--secondary-gradient);
+            opacity: 0.1;
+            transition: left 0.5s ease;
+        }
+
+        .service-card:hover::before {
+            left: 0;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px) rotateX(5deg);
+            box-shadow: var(--card-shadow);
+            border-color: var(--accent-color);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        .service-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+            font-weight: 700;
+        }
+
+        .service-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Enhanced Statistics */
+        .stats-section {
+            background: var(--primary-gradient);
+            padding: 4rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stats-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 20"><defs><pattern id="grain" width="100" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="0.5" fill="%23ffffff" opacity="0.1"/></pattern></defs><rect width="100" height="20" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .stat-item {
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 900;
+            color: white;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 600;
+        }
+
+        /* Enhanced Pricing */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .pricing-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 2rem;
+            position: relative;
+            transition: all 0.4s ease;
+            overflow: hidden;
+        }
+
+        .pricing-card.featured {
+            border: 2px solid var(--accent-color);
+            transform: scale(1.05);
+            box-shadow: 0 20px 40px rgba(0, 242, 254, 0.2);
+        }
+
+        .pricing-card.featured::before {
+            content: 'POPULAR';
+            position: absolute;
+            top: 1rem;
+            right: -2rem;
+            background: var(--accent-color);
+            color: var(--dark-gradient);
+            padding: 0.5rem 3rem;
+            font-weight: bold;
+            font-size: 0.8rem;
+            transform: rotate(45deg);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--card-shadow);
+        }
+
+        .price-list {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+
+        .price-list p {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .price-list p:last-child {
+            border-bottom: none;
+        }
+
+        /* Enhanced Contact Section */
+        .contact-section {
+            background: var(--dark-gradient);
+            position: relative;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateX(10px);
+            border-color: var(--accent-color);
+            box-shadow: 0 10px 30px rgba(0, 242, 254, 0.1);
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        /* Enhanced Form */
+        .contact-form {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: var(--card-shadow);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-primary);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 20px rgba(0, 242, 254, 0.2);
+            transform: scale(1.02);
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Enhanced Quick Contact */
+        .quick-contact {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+
+        .quick-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .quick-btn.whatsapp {
+            background: #25D366;
+            color: white;
+        }
+
+        .quick-btn.call {
+            background: #FF6B35;
+            color: white;
+        }
+
+        .quick-btn.email {
+            background: #4285F4;
+            color: white;
+        }
+
+        .quick-btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Testimonials Section */
+        .testimonials-section {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            padding: 6rem 0;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 2rem;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--card-shadow);
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-size: 4rem;
+            color: var(--accent-color);
+            font-family: serif;
+        }
+
+        .testimonial-text {
+            margin-bottom: 1rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--accent-color);
+        }
+
+        /* Enhanced Footer */
+        footer {
+            background: var(--dark-gradient);
+            padding: 3rem 0 1rem;
+            border-top: 1px solid var(--glass-border);
+            position: relative;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .footer-section p,
+        .footer-section a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            margin-bottom: 0.5rem;
+            display: block;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--accent-color);
+            transform: translateX(5px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid var(--glass-border);
+            color: var(--text-secondary);
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background: var(--accent-color);
+            color: var(--dark-gradient);
+            border: none;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(100px);
+            z-index: 1000;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .back-to-top:hover {
+            transform: scale(1.1) translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 242, 254, 0.3);
+        }
+
+        /* Loading Screen Enhancement */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--dark-gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+
+        .loader {
+            width: 60px;
+            height: 60px;
+            border: 3px solid rgba(255, 255, 255, 0.1);
+            border-top: 3px solid var(--accent-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero-title {
+                font-size: 3rem;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(12, 12, 12, 0.95);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                padding: 2rem;
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease;
+            }
+
+            .nav-links.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .floating-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-card.featured {
+                transform: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .quick-contact {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .quick-btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        /* Scroll Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.6s ease;
+        }
+
+        .slide-in-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.6s ease;
+        }
+
+        .slide-in-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Success Message */
+        .success-message {
+            background: var(--success-color);
+            color: white;
+            padding: 1rem;
+            border-radius: 10px;
+            margin-top: 1rem;
+            display: none;
+            animation: slideDown 0.3s ease;
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-overlay" id="loader">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Animated Background -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <a href="#" class="logo">skin canvas</a>
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#pricing" class="nav-link">Pricing</a></li>
+                <li><a href="#testimonials" class="nav-link">Reviews</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">Advanced Solutions for Modern Kashmir</h1>
+                    <p class="hero-subtitle">Meet <strong>Asif fayaz</strong>, your trusted partner in khanyar for professional tatto removal, PRP hair treatment, and pigmentation Treatment. Experience the skin canvas of kashmir with personalized care.</p>
+                    <div class="hero-cta">
+                        <a href="#contact" class="btn-primary">
+                            <i class="fas fa-rocket"></i> Get Started
+                        </a>
+                        <a href="#services" class="btn-secondary">
+                            <i class="fas fa-play"></i> View Services
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="floating-cards">
+                        <div class="floating-card">
+                            <div style="font-size: 2rem; margin-bottom: 0.5rem;">✨</div>
+                            <h4>tattoo removal</h4>
+                            <p style="font-size: 0.9rem; color: var(--text-secondary);">PRP hair treatment</p>
+                        </div>
+                        <div class="floating-card">
+                            <div style="font-size: 2rem; margin-bottom: 0.5rem;">✨</div>
+                            <h4>Tech Repair</h4>
+                            <p style="font-size: 0.9rem; color: var(--text-secondary);">pigmentation treatment solutions</p>
+                        </div>
+                        <div class="floating-card">
+                            <div style="font-size: 2rem; margin-bottom: 0.5rem;">✨</div>
+                            <h4>Data Recovery</h4>
+                            <p style="font-size: 0.9rem; color: var(--text-secondary);"> laser hair reduction</p>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number" data-target="500">0</span>
+                    <span class="stat-label">tatto removal</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="200">0</span>
+                    <span class="stat-label">PRP Hair treatment</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="5">0</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="100">0</span>
+                    <span class="stat-label">Happy Clients</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="section">
+        <div class="container">
+            <h2 class="section-title fade-in">Our Premium Services</h2>
+            <p class="section-subtitle fade-in">Comprehensive digital solutions tailored for your needs</p>
+            
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <span class="service-icon">📋</span>
+                    <h3>PRP hair treatment</h3>
+                    <p>Tattoo removal, PRP hair treatment, laser hair reduction and pigmentation treatment with expert assistance.</p>
+                    <div style="margin-top: 1rem;">
+                        <span style="background: rgba(0, 242, 254, 0.2); color: var(--accent-color); padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem; font-weight: 600;">Same Day Processing</span>
+                    </div>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <span class="service-icon">🏢</span>
+                    <h3>Hair treatment</h3>
+                    <p>Complete hair reduction treatment, PRP Hair treatment, pigmentation treatment .</p>
+                    <div style="margin-top: 1rem;">
+                        <span style="background: rgba(0, 242, 254, 0.2); color: var(--accent-color); padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem; font-weight: 600;">Expert Guidance</span>
+                    </div>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <span class="service-icon">✨</span>
+                    <h3>Scar treatment</h3>
+                    <p>A PAINLESS "ADVANCED prp GROWTH FACTOR THERAPY"TAHT AIDS IN HAIR REGROWTH,REDUCESHAIR FALL AND SCAR TREATMENT.</p>
+                    <div style="margin-top: 1rem;">
+                        <span style="background: rgba(0, 242, 254, 0.2); color: var(--accent-color); padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem; font-weight: 600;">Home Service</span>
+                    </div>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <span class="service-icon">✨</span>
+                    <h3>UNEVEN SKIN TONE</h3>
+                    <p>solutions for addressing uneven skin tone.</p>
+                    <div style="margin-top: 1rem;">
+                        <span style="background: rgba(0, 242, 254, 0.2); color: var(--accent-color); padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem; font-weight: 600;">Genuine Laser hair reduction</span>
+                    </div>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <span class="service-icon">💾</span>
+                    <h3>laser hair reduction</h3>
+                    <p>Professional in tattoo removal ,PRP hair treatment,laser hair reeduction and pigmentation treatment solutions.</p>
+                    <div style="margin-top: 1rem;">
+                        <span style="background: rgba(0, 242, 254, 0.2); color: var(--accent-color); padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem; font-weight: 600;">95% Success Rate</span>
+                    </div>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <span class="service-icon">🌐</span>
+                    <h3>pigmentation & PRP hair Services</h3>
+                    <p>using Q-switiched and multiple wavelength lasers with custom plans and aftercare support.</p>
+                    <div style="margin-top: 1rem;">
+                        <span style="background: rgba(0, 242, 254, 0.2); color: var(--accent-color); padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem; font-weight: 600;">24/7 Support</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="section">
+        <div class="container">
+            <h2 class="section-title fade-in">Transparent Pricing</h2>
+            <p class="section-subtitle fade-in">Affordable rates with no hidden charges</p>
+            
+            <div class="pricing-grid">
+                <div class="pricing-card fade-in">
+                    <div class="service-icon">📋</div>
+                    <h3>Pigmentation Treatment</h3>
+                    <div class="price-list">
+                        <p><span>tattoo removal</span><span>₹500 - ₹2000</span></p>
+                        <p><span>PRP Hair treatment</span><span>₹1500 - ₹5000</span></p>
+                        <p><span>laser hair reduction</span><span>₹3000 - ₹50000</span></p>
+                        <p><span>pigmentaion treatment</span><span>₹1000 - ₹15000</span></p>
+                        <p><span>scar treatment</span><span>₹2000 - ₹3000</span></p>
+                    </div>
+                    <small style="color: var(--text-secondary);">*GST fees separate</small>
+                </div>
+                
+                <div class="pricing-card featured fade-in">
+                    <div class="service-icon">💻</div>
+                    <h3>Tattoo Removal</h3>
+                    <div class="price-list">
+                        <p><span>SKIN Checkup</span><span>₹200 - ₹300</span></p>
+                        <p><span>"Advanced PRP Growth Factor Therapy</span><span>₹3000 - ₹5000</span></p>
+                        <p><span> scar treatment</span><span>₹500 - ₹1,500</span></p>
+                        <p><span>PIGMENTAION TREATMENT</span><span>₹5000 - ₹20000</span></p>
+                        <p><span>Laser hair reduction</span><span>₹1,500 - ₹3,000</span></p>
+                    </div>
+                    <small style="color: var(--text-secondary);">*skin checkup cost additional</small>
+                </div>
+                
+                <div class="pricing-card fade-in">
+                    <div class="service-icon">🏢</div>
+                    <h3>PRP hair treatment</h3>
+                    <div class="price-list">
+                        <p><span>tattoo removal</span><span>₹1,000 - ₹15000</span></p>
+                        <p><span>scar treatment</span><span>₹800 - ₹1,200</span></p>
+                        <p><span>pigmentation treatment</span><span>₹5000 - ₹8000</span></p>
+                        <p><span> Consultation</span><span>₹300 - ₹500</span></p>
+                    </div>
+                    <small style="color: var(--text-secondary);">*Includes documentation</small>
+                </div>
+            </div>
+            
+            <!-- Special Offers -->
+            <div style="background: var(--glass-bg); backdrop-filter: blur(20px); border: 1px solid var(--glass-border); border-radius: 20px; padding: 3rem; margin-top: 3rem; text-align: center;">
+                <h3 style="margin-bottom: 2rem; color: var(--accent-color);">🎯 Special Offers</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+                    <div style="background: rgba(0, 242, 254, 0.1); border: 1px solid var(--accent-color); padding: 1.5rem; border-radius: 15px;">
+                        <h4 style="color: var(--accent-color); margin-bottom: 0.5rem;">🏠 Home Visit Service</h4>
+                        <p style="color: var(--text-secondary);">Additional ₹100-200 for doorstep service in khanyar and nearby areas</p>
+                    </div>
+                    <div style="background: rgba(0, 242, 254, 0.1); border: 1px solid var(--accent-color); padding: 1.5rem; border-radius: 15px;">
+                        <h4 style="color: var(--accent-color); margin-bottom: 0.5rem;">📦 Bulk Discount</h4>
+                        <p style="color: var(--text-secondary);">15% off on 5+ services or multiple form applications</p>
+                    </div>
+                    <div style="background: rgba(0, 242, 254, 0.1); border: 1px solid var(--accent-color); padding: 1.5rem; border-radius: 15px;">
+                        <h4 style="color: var(--accent-color); margin-bottom: 0.5rem;">⚡ Express Service</h4>
+                        <p style="color: var(--text-secondary);">Same-day service available with priority handling</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials-section">
+        <div class="container">
+            <h2 class="section-title fade-in">What Our Clients Say</h2>
+            <p class="section-subtitle fade-in">Real experiences from satisfied customers</p>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card fade-in">
+                    <p class="testimonial-text">Asif fayaz helped me with my scar treatment and helped in my hair reduction. Very professional service and reasonable pricing. Highly recommended!</p>
+                    <div class="testimonial-author">- Mohammad Ali, Chadoora</div>
+                    <div style="color: var(--accent-color); margin-top: 0.5rem;">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card fade-in">
+                    <p class="testimonial-text">Excellent hair reduction service! I thought i will all my hair after some years, but Skin Canvas recovered everything perfectly.</p>
+                    <div class="testimonial-author">- Shabir Ahmad, Budgam</div>
+                    <div style="color: var(--accent-color); margin-top: 0.5rem;">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card fade-in">
+                    <p class="testimonial-text">Quick and efficient tattoo removal. Asif Fayaz guided me through the entire process and completed everything in just 2 days.</p>
+                    <div class="testimonial-author">- Rashid Khan, Srinagar</div>
+                    <div style="color: var(--accent-color); margin-top: 0.5rem;">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title fade-in">Why Choose skin canvas?</h2>
+            <p class="section-subtitle fade-in">Your trusted skin clinic partner in khanyar</p>
+            
+            <div class="services-grid">
+                <div class="service-card fade-in slide-in-left">
+                    <span class="service-icon">⚡</span>
+                    <h3>Lightning Fast Service</h3>
+                    <p>Quick turnaround times with same-day service options available. We understand your time is valuable and work efficiently to meet your deadlines.</p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <span class="service-icon">🎯</span>
+                    <h3>100% Accuracy Guaranteed</h3>
+                    <p>Meticulous attention to detail ensures your forms are completed correctly the first time. No rejections, no delays, just perfect results.</p>
+                </div>
+                
+                <div class="service-card fade-in slide-in-right">
+                    <span class="service-icon">🔒</span>
+                    <h3>Secure & Confidential</h3>
+                    <p>Your personal and business information is handled with utmost care and confidentiality. Advanced security measures protect your data.</p>
+                </div>
+                
+                <div class="service-card fade-in slide-in-left">
+                    <span class="service-icon">🏆</span>
+                    <h3>Expert Experience</h3>
+                    <p>5+ years of experience serving srinagar district. Deep knowledge of local requirements.</p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <span class="service-icon">💬</span>
+                    <h3>Local Language Support</h3>
+                    <p>Fluent in Kashmiri, Urdu, Hindi, and English. We communicate in the language you're most comfortable with.</p>
+                </div>
+                
+                <div class="service-card fade-in slide-in-right">
+                    <span class="service-icon">🌟</span>
+                    <h3>Customer First Approach</h3>
+                    <p>Dedicated customer support with free consultations. We're here to guide you through every step of the process.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section section">
+        <div class="container">
+            <h2 class="section-title fade-in">Get In Touch</h2>
+            <p class="section-subtitle fade-in">Ready to get started? Contact us today!</p>
+            
+            <div class="contact-grid">
+                <div class="contact-info fade-in slide-in-left">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+91 8899921263</p>
+                            <small style="color: var(--text-secondary);">Available 9 AM - 8 PM</small>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4>Email</h4>
+                            <p>asiffayaz1994@gmail.com</p>
+                            <small style="color: var(--text-secondary);">Quick response guaranteed</small>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h4>Location</h4>
+                            <p>khanyar<br>Srinagar, J&K 190003</p>
+                            <small style="color: var(--text-secondary);">Home visits available</small>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <h4>Business Hours</h4>
+                            <p>Mon - Sat: 9:00 AM - 8:00 PM<br>Sunday: By appointment</p>
+                            <small style="color: var(--text-secondary);">Emergency service available</small>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form fade-in slide-in-right">
+                    <h3 style="margin-bottom: 1.5rem; color: var(--text-primary);">Send us a message</h3>
+                    <form action="https://formspree.io/f/mwpgwvko" method="POST" id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name *</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name *</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="_replyto" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="serviceType">Service Required *</label>
+                            <select id="serviceType" name="serviceType" required>
+                                <option value="">Select a service</option>
+                                <option value="tattoo-removal">tattoo removal</option>
+                                <option value="laser-hair reduction">laser hair reduction</option>
+                                <option value="pigmentation-treatment">pigmentation treatment</option>
+                                <option value="consultation">Free Consultation</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="urgency">Urgency Level</label>
+                            <select id="urgency" name="urgency">
+                                <option value="normal">Normal (2-3 days)</option>
+                                <option value="urgent">Urgent (1-2 days)</option>
+                                <option value="emergency">Emergency (Same day)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Detailed Message *</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Please describe your requirements in detail..." required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;" id="submitBtn">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                        
+                        <div class="success-message" id="successMessage">
+                            <i class="fas fa-check-circle"></i> Thank you! Your message has been sent successfully. We'll get back to you within 2 hours.
+                        </div>
+                    </form>
+                    
+                    <!-- Quick Contact Options -->
+                    <div class="quick-contact">
+                        <a href="https://wa.me/918899921263?text=Hi%20Asif%20Fayaz%2C%20I%20need%20help%20with%20digital%20services%20at%20skin%20Canvas" 
+                           target="_blank" class="quick-btn whatsapp">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </a>
+                        <a href="tel:+918899921263" class="quick-btn call">
+                            <i class="fas fa-phone"></i> Call Now
+                        </a>
+                        <a href="mailto:asiffayaz1994@gmail.com?subject=Service%20Inquiry%20-%20skin%20Canvas&body=Hi%20asif%20fayaz%2C%0A%0AI%20would%20like%20to%20inquire%20about%20your%20services.%0A%0AService%20needed%3A%20%0AUrgency%3A%20%0ADetails%3A%20%0A%0AThank%20you%21" class="quick-btn email">
+                            <i class="fas fa-envelope"></i> Email
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Skin canvas</h3>
+                    <p>Founded and operated by <strong>Asif Fayaz</strong>, your trusted clinic partner in khanyar. Providing comprehensive pigmentation treatment services and laser hair reduction solutions since 2020.</p>
+                    <div style="margin-top: 1rem;">
+                        <a href="https://www.facebook.com" target="_blank" style="margin-right: 1rem; font-size: 1.5rem; color: var(--accent-color);"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com" target="_blank" style="margin-right: 1rem; font-size: 1.5rem; color: var(--accent-color);"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/919906405769" target="_blank" style="margin-right: 1rem; font-size: 1.5rem; color: var(--accent-color);"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Our Services</h3>
+                    <a href="#services">Tattoo removal</a>
+                    <a href="#services">scar treatment</a>
+                    <a href="#services">PRP Hair treatment</a>
+                    <a href="#services">pigmentaion treatment</a>
+                 </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <a href="#home">Home</a>
+                    <a href="#services">Services</a>
+                    <a href="#pricing">Pricing</a>
+                    <a href="#testimonials">Reviews</a>
+                    <a href="#about">About Us</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-phone"></i> +91 8899921263</p>
+                    <p><i class="fas fa-envelope"></i> asiffayaz1994@gmail.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> khanyar, srinagar, J&K</p>
+                    <p><i class="fas fa-clock"></i> Mon-Sat: 9 AM - 8 PM</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Skin Canvas Aesthetics - Asif fayaz. All rights reserved. | Designed with care for Kashmir</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script>
+        // Enhanced JavaScript functionality
+        
+        // Page Loading
+        window.addEventListener('load', function() {
+            document.getElementById('loader').style.opacity = '0';
+            setTimeout(() => {
+                document.getElementById('loader').style.display = 'none';
+                // Start animations after loading
+                initializeAnimations();
+            }, 500);
+        });
+
+        // Initialize all animations
+        function initializeAnimations() {
+            createParticles();
+            initScrollAnimations();
+            initStatCounters();
+            initFormHandling();
+        }
+
+        // Enhanced Particles Animation
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = window.innerWidth > 768 ? 50 : 25;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                particle.style.left = Math.random() * 100 + 'vw';
+                particle.style.animationDelay = Math.random() * 20 + 's';
+                particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        // Enhanced Mobile Menu
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+        const navLinksItems = document.querySelectorAll('.nav-link');
+
+        menuToggle.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+            const icon = this.querySelector('i');
+            if (navLinks.classList.contains('active')) {
+                icon.classList.replace('fa-bars', 'fa-times');
+            } else {
+                icon.classList.replace('fa-times', 'fa-bars');
+            }
+        });
+
+        // Close mobile menu when clicking on links
+        navLinksItems.forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                menuToggle.querySelector('i').classList.replace('fa-times', 'fa-bars');
+            });
+        });
+
+        // Enhanced Smooth Scrolling with active link highlighting
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    
+                    // Update active nav link
+                    navLinksItems.forEach(link => link.classList.remove('active'));
+                    if (this.classList.contains('nav-link')) {
+                        this.classList.add('active');
+                    }
+                }
+            });
+        });
+
+        // Enhanced Scroll Animations
+        function initScrollAnimations() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all animation elements
+            document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right').forEach(el => {
+                observer.observe(el);
+            });
+        }
+
+        // Enhanced Statistics Counter
+        function initStatCounters() {
+            function animateCounter(element) {
+                const target = parseInt(element.getAttribute('data-target'));
+                const duration = 2000;
+                const step = target / (duration / 16);
+                let current = 0;
+
+                const timer = setInterval(() => {
+                    current += step;
+                    element.textContent = Math.floor(current);
+                    
+                    if (current >= target) {
+                        element.textContent = target + (target === 5 ? '' : '+');
+                        clearInterval(timer);
+                    }
+                }, 16);
+            }
+
+            const statsObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const statNumbers = entry.target.querySelectorAll('.stat-number');
+                        statNumbers.forEach(stat => {
+                            animateCounter(stat);
+                        });
+                        statsObserver.unobserve(entry.target);
+                    }
+                });
+            });
+
+            const statsSection = document.querySelector('.stats-section');
+            if (statsSection) {
+                statsObserver.observe(statsSection);
+            }
+        }
+
+        // Enhanced Header Scroll Effect
+        let lastScrollTop = 0;
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            // Auto-hide header on scroll down
+            if (scrollTop > lastScrollTop && scrollTop > 100) {
+                header.style.transform = 'translateY(-100%)';
+            } else {
+                header.style.transform = 'translateY(0)';
+            }
+            
+            // Change header background opacity
+            if (scrollTop > 100) {
+                header.style.background = 'rgba(12, 12, 12, 0.95)';
+                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.3)';
+            } else {
+                header.style.background = 'rgba(12, 12, 12, 0.8)';
+                header.style.boxShadow = 'none';
+            }
+            
+            lastScrollTop = scrollTop;
+            
+            // Back to top button visibility
+            const backToTop = document.getElementById('backToTop');
+            if (scrollTop > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+            
+            // Update active nav link based on scroll position
+            updateActiveNavLink();
+        });
+
+        // Update active navigation link based on scroll position
+        function updateActiveNavLink() {
+            const sections = document.querySelectorAll('section[id]');
+            const scrollPos = window.scrollY + 100;
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+                const sectionId = section.getAttribute('id');
+                const navLink = document.querySelector(`a[href="#${sectionId}"]`);
+
+                if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                    navLinksItems.forEach(link => link.classList.remove('active'));
+                    if (navLink && navLink.classList.contains('nav-link')) {
+                        navLink.classList.add('active');
+                    }
+                }
+            });
+        }
+
+        // Back to top functionality
+        document.getElementById('backToTop').addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Enhanced Form Handling
+        function initFormHandling() {
+            const form = document.getElementById('contactForm');
+            const submitBtn = document.getElementById('submitBtn');
+            const successMessage = document.getElementById('successMessage');
+
+            if (form) {
+                // Form validation
+                const inputs = form.querySelectorAll('input[required], textarea[required], select[required]');
+                
+                inputs.forEach(input => {
+                    input.addEventListener('blur', validateField);
+                    input.addEventListener('input', clearFieldError);
+                });
+
+                // Form submission
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Validate all fields
+                    let isValid = true;
+                    inputs.forEach(input => {
+                        if (!validateField({ target: input })) {
+                            isValid = false;
+                        }
+                    });
+
+                    if (!isValid) {
+                        showError('Please fill in all required fields correctly.');
+                        return;
+                    }
+
+                    // Show loading state
+                    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+                    submitBtn.disabled = true;
+
+                    // Submit form using fetch
+                    const formData = new FormData(form);
+                    
+                    fetch(form.action, {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    })
+                    .then(response => {
+                        if (response.ok) {
+                            // Success
+                            submitBtn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
+                            submitBtn.style.background = 'var(--success-color)';
+                            successMessage.style.display = 'block';
+                            form.reset();
+                            
+                            // Reset button after delay
+                            setTimeout(() => {
+                                submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
+                                submitBtn.style.background = '';
+                                submitBtn.disabled = false;
+                                successMessage.style.display = 'none';
+                            }, 5000);
+                        } else {
+                            throw new Error('Network response was not ok');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        showError('Sorry, there was an error sending your message. Please try again or contact us directly.');
+                        submitBtn.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Try Again';
+                        submitBtn.disabled = false;
+                    });
+                });
+            }
+        }
+
+        // Field validation
+        function validateField(e) {
+            const field = e.target;
+            const value = field.value.trim();
+            
+            // Remove existing error styling
+            field.style.borderColor = '';
+            
+            if (field.hasAttribute('required') && !value) {
+                field.style.borderColor = 'var(--error-color)';
+                return false;
+            }
+            
+            if (field.type === 'email' && value) {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(value)) {
+                    field.style.borderColor = 'var(--error-color)';
+                    return false;
+                }
+            }
+            
+            if (field.type === 'tel' && value) {
+                const phoneRegex = /^[\+]?[\d\s\-\(\)]{10,}$/;
+                if (!phoneRegex.test(value)) {
+                    field.style.borderColor = 'var(--error-color)';
+                    return false;
+                }
+            }
+            
+            field.style.borderColor = 'var(--success-color)';
+            return true;
+        }
+
+        // Clear field error styling
+        function clearFieldError(e) {
+            const field = e.target;
+            if (field.style.borderColor === 'var(--error-color)') {
+                field.style.borderColor = '';
+            }
+        }
+
+        // Show error message
+        function showError(message) {
+            const errorDiv = document.createElement('div');
+            errorDiv.style.cssText = `
+                background: var(--error-color);
+                color: white;
+                padding: 1rem;
+                border-radius: 10px;
+                margin-top: 1rem;
+                animation: slideDown 0.3s ease;
+            `;
+            errorDiv.innerHTML = `<i class="fas fa-exclamation-circle"></i> ${message}`;
+            
+            const form = document.getElementById('contactForm');
+            form.appendChild(errorDiv);
+            
+            setTimeout(() => {
+                errorDiv.remove();
+            }, 5000);
+        }
+
+        // Enhanced Service Cards Hover Effect
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px) rotateX(5deg)';
+                
+                // Add subtle glow effect
+                const icon = this.querySelector('.service-icon');
+                if (icon) {
+                    icon.style.textShadow = '0 0 20px var(--accent-color)';
+                }
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) rotateX(0deg)';
+                
+                const icon = this.querySelector('.service-icon');
+                if (icon) {
+                    icon.style.textShadow = '';
+                }
+            });
+        });
+
+        // Pricing card hover effects
+        document.querySelectorAll('.pricing-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                if (!this.classList.contains('featured')) {
+                    this.style.transform = 'translateY(-10px) scale(1.02)';
+                }
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                if (!this.classList.contains('featured')) {
+                    this.style.transform = 'translateY(0) scale(1)';
+                }
+            });
+        });
+
+        // Floating cards animation enhancement
+        document.querySelectorAll('.floating-card').forEach((card, index) => {
+            card.addEventListener('mouseenter', function() {
+                this.style.animationPlayState = 'paused';
+                this.style.transform = 'scale(1.05) rotateY(10deg) translateZ(20px)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.animationPlayState = 'running';
+                this.style.transform = '';
+            });
+        });
+
+        // Add typing effect to hero title
+        function typeWriter(element, text, speed = 100) {
+            element.textContent = '';
+            let i = 0;
+            
+            function type() {
+                if (i < text.length) {
+                    element.textContent += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                }
+            }
+            type();
+        }
+
+        // Intersection Observer for typing effect
+        const titleObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const title = entry.target;
+                    const originalText = title.textContent;
+                    setTimeout(() => {
+                        typeWriter(title, originalText, 80);
+                    }, 500);
+                    titleObserver.unobserve(title);
+                }
+            });
+        });
+
+        // Observe hero title for typing effect
+        const heroTitle = document.querySelector('.hero-title');
+        if (heroTitle) {
+            titleObserver.observe(heroTitle);
+        }
+
+        // Add parallax effect to hero section
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            const heroContent = document.querySelector('.hero-content');
+            
+            if (hero && scrolled < hero.offsetHeight) {
+                heroContent.style.transform = `translateY(${scrolled * 0.5}px)`;
+            }
+        });
+
+        // Add smooth transitions for all interactive elements
+        document.querySelectorAll('button, .btn-primary, .btn-secondary, .quick-btn').forEach(btn => {
+            btn.addEventListener('mouseenter', function() {
+                this.style.filter = 'brightness(1.1)';
+            });
+            
+            btn.addEventListener('mouseleave', function() {
+                this.style.filter = '';
+            });
+        });
+
+        // Initialize tooltips for contact items
+        document.querySelectorAll('.contact-item').forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                const tooltip = this.querySelector('small');
+                if (tooltip) {
+                    tooltip.style.opacity = '1';
+                    tooltip.style.transform = 'translateY(-5px)';
+                }
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                const tooltip = this.querySelector('small');
+                if (tooltip) {
+                    tooltip.style.opacity = '0.7';
+                    tooltip.style.transform = 'translateY(0)';
+                }
+            });
+        });
+
+        // Add loading state to quick contact buttons
+        document.querySelectorAll('.quick-btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                if (this.href.includes('tel:') || this.href.includes('mailto:')) {
+                    // Add click effect
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 150);
+                }
+            });
+        });
+
+        // Enhanced keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                // Close mobile menu if open
+                if (navLinks.classList.contains('active')) {
+                    navLinks.classList.remove('active');
+                    menuToggle.querySelector('i').classList.replace('fa-times', 'fa-bars');
+                }
+            }
+        });
+
+        // Add resize handler for responsive adjustments
+        window.addEventListener('resize', function() {
+            // Reinitialize particles on resize
+            const existingParticles = document.querySelectorAll('.particle');
+            existingParticles.forEach(particle => particle.remove());
+            createParticles();
+            
+            // Close mobile menu on resize to desktop
+            if (window.innerWidth > 768 && navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+                menuToggle.querySelector('i').classList.replace('fa-times', 'fa-bars');
+            }
+        });
+
+        // Add focus management for accessibility
+        document.querySelectorAll('input, textarea, select, button, a').forEach(element => {
+            element.addEventListener('focus', function() {
+                this.style.outline = '2px solid var(--accent-color)';
+                this.style.outlineOffset = '2px';
+            });
+            
+            element.addEventListener('blur', function() {
+                this.style.outline = '';
+                this.style.outlineOffset = '';
+            });
+        });
+
+        // Performance optimization: Throttle scroll events
+        let ticking = false;
+        function throttleScroll() {
+            if (!ticking) {
+                requestAnimationFrame(function() {
+                    // Scroll-dependent functions are already handled above
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        }
+
+        // Initialize everything when DOM is ready
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add initial load animation to hero
+            setTimeout(() => {
+                document.querySelector('.hero').style.opacity = '1';
+            }, 100);
+        });
+
+        // Add error handling for missing elements
+        function safeQuerySelector(selector, callback) {
+            const element = document.querySelector(selector);
+            if (element && callback) {
+                callback(element);
+            }
+            return element;
+        }
+
+        // Initialize with error handling
+        function safeInitialize() {
+            try {
+                // All initialization code is wrapped in the load event listener above
+                console.log('Login Computers website initialized successfully');
+            } catch (error) {
+                console.warn('Some features may not be available:', error);
+            }
+        }
+
+        // Call safe initialize
+        safeInitialize();
+    </script>
+</body>
+</html>
+                        
